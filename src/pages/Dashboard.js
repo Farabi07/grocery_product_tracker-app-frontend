@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      <div>
+      {/* <div>
         <h2>Monthly Reports</h2>
         {reports.length > 0 ? (
           reports.map(report => (
@@ -26,7 +26,7 @@ const Dashboard = () => {
         ) : (
           <p>No reports available.</p>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

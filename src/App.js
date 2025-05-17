@@ -5,6 +5,9 @@ import Dashboard from './pages/Dashboard';
 import Reports from './pages/Reports';
 import ReceiptScan from './pages/ReceiptScan';
 
+function NotFound() {
+  return <div>Page not found</div>;
+}
 function App() {
   return (
     <div className="App">
@@ -12,6 +15,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/receipt-scan" element={<ReceiptScan />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
