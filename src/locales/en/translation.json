@@ -1,0 +1,147 @@
+{
+  
+  "dashboard": {
+    "title": "Dashboard",
+    "select_language": "Select language",
+    "data_label": "Data label",
+    "statistic": "Statistic",
+    "recent_orders": "Recent Orders",
+    "date": "Date",
+    "product": "Product",
+    "category": "Category",
+    "amount": "Amount",
+    "activities": "Activities",
+    "recently_added_receipt": "Recently added a receipt",
+    "recently_edited_receipt": "Recently edited a receipt"
+  },
+
+  "sidebar": {
+    "title": "GastRonomIQ",
+    "subtitle": "Track items, Calculate, Together",
+    "Dashboard": "Dashboard",
+    "Expenses": "Expenses",
+    "Product": "Product",
+    "Employees": "Employees"
+  },
+
+  "common": {
+    "english": "English",
+    "german": "German",
+    "remove": "Remove",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+
+  "data_label": "Data label",
+  "recently_added_a_receipt": "Recently added a receipt",
+  "recently_edited_a_receipt": "Recently edited a receipt",
+  "recently_added_receipt": "Recently added receipt",
+
+  "employee": {
+    "employee": "Employee",
+    "emp_details": "Employee Details",
+    "manage_employees": "Manage your employee details",
+    "name": "Name",
+    "designation": "Designation",
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "id": "Id",
+    "actions": "Actions",
+    "add_employee": "Add New Employee",
+    "emp_name": "Employee Name",
+    "emp_designation": "Employee Designation",
+    "add": "Add",
+    "cancel": "Cancel",
+
+    "placeholder": {
+      "name": "Enter employee name",
+      "designation": "Enter  designation",
+      "email": "Enter employee email",
+      "phone": "Enter employee number",
+      "password": "Enter employee password"
+
+    }
+    
+  } ,
+
+  "product": {
+    "product": "Product",
+    "prod_management": "Product Management",
+    "prod_manage_desc": "Manage your product categories and items.",
+    "cate_name": "Category Name",
+    "actions": "Actions",
+    "category_details": "Category Details",
+    "add_category": "Add New Category",
+    "new_category": "New Category Name",
+    "manage_items": "Manage your items",
+    "cate_prod_name": "Category Product Name",
+    "add": "Add",
+    "cancel": "Cancel",
+    "items": "Items",
+
+    "placeholder": {
+      "name": "Enter category name",
+      "category": "Enter product (comma separated)"
+    }
+  },
+
+  "expense": {
+    "expense": "Expense",
+    "exp_monthly_report": "Monthly Expenses Report",
+    "exp_monthly_category": "Monthly Expenses by Category",
+    "exp_overview": "Overview and details of categorized expenses for the selected month.",
+    "report_for": "Report for",
+    "total_month_exp": "Total Monthly Expense",
+    "prev_month": "Vs. Previous Month",
+    "dec_for_last_month": "Decrease from last month",
+    "exp_category": "Expense Category",
+    "category": "category",
+    "exp_analize": "Analyzing spending in 6 categories",
+    "highest_category": "Highest Category",
+    "single_exp": "Largest Single Expense",
+    "avg_exp": "Average Daily Spend",
+    "exp_details": "Detailed Expenses",
+    "breakdown_report": "Breakdown of all recorded expenses for the selected month.",
+    "date": "Date",
+    "product": "Product",
+    "Category": "Category",
+    "amount": "Amount",
+    "ref": "Ref"
+
+   
+  },
+  "months": {
+  "January": "January",
+  "February": "February",
+  "March": "March",
+  "April": "April",
+  "May": "May",
+  "June": "June",
+  "July": "July",
+  "August": "August",
+  "September": "September",
+  "October": "October",
+  "November": "November",
+  "December": "December"
+},
+"auth": {
+    "signin": "Sign In",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "donot_have_account": "Don't have an account?",
+    "do_you_have_account": "Do you have an account?",
+    "signup": "Sign Up",
+    "or": "Or",
+    "placeholder": {
+      "email": "Enter your email",
+      "password": "Enter your password",
+      "confirm_password": "Confirm your password",
+      "name": "Enter your full name"
+    }
+    
+  }
+
+}

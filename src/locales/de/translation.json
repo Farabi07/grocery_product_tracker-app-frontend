@@ -1,0 +1,144 @@
+
+
+{
+  "dashboard": {
+    "title": "Instrumententafel",
+    "select_language": "Sprache auswählen",
+    "data_label": "Datenbezeichnung",
+    "statistic": "Statistik",
+    "recent_orders": "Letzte Bestellungen",
+    "date": "Datum",
+    "product": "Produkt",
+    "category": "Kategorie",
+    "amount": "Betrag",
+    "activities": "Aktivitäten",
+    "recently_added_receipt": "Kürzlich eine Quittung hinzugefügt",
+    "recently_edited_receipt": "Kürzlich eine Quittung bearbeitet"
+  },
+  "sidebar": {
+    "title": "GastRonomIQ",
+    "subtitle": "Artikel verfolgen, Berechnen, Gemeinsam",
+    "Dashboard": "Instrumententafel",
+    "Expenses": "Ausgaben",
+    "Product": "Produkt",
+    "Employees": "Mitarbeiter"
+  },
+  "common": {
+    "english": "Englisch",
+    "german": "Deutsch",
+    "remove": "Entfernen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten"    
+  },
+  "data_label": "Datenetikett",
+  "recently_added_a_receipt": "Kürzlich eine Quittung hinzugefügt",
+  "recently_edited_a_receipt": "Kürzlich eine Quittung bearbeitet",
+  "recently_added_receipt": "Kürzlich hinzugefügte Quittung",
+
+
+    "employee": {
+    "employee": "Mitarbeiterin",
+    "emp_details": "Mitarbeiterdetails",
+    "manage_employees": "Verwalten Sie Ihre Mitarbeiterdaten",
+    "name": "Name",
+    "designation": "Bezeichnung",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "password": "Passwort",
+    "id": "Ausweis",
+    "role": "Role",
+    "actions": "Aktionen",
+    "add_employee": "Neuen Mitarbeiter hinzufügen",
+    "emp_name": "Mitarbeitername",
+    "emp_designation": "Mitarbeiterbezeichnung",
+    "add": "Hinzufügen",
+    "cancel": "Abbrechen",
+    "placeholder": {
+      "name": "Mitarbeiternamen eingeben",
+      "designation": "Bezeichnung eingeben",
+      "email": "E-Mail des Mitarbeiters eingeben",
+      "phone": "Mitarbeiternummer eingeben",
+      "password": "Geben Sie das Mitarbeiterpasswort ein"
+    }
+  },
+  
+  "product": {
+    "product": "Produkt",
+    "prod_management": "Produktmanagement",
+    "prod_manage_desc": "Verwalten Sie Ihre Produktkategorien und Artikel.",
+    "cate_name": "Kategoriename",
+    "actions": "Aktionen",
+    "add_category": "Neue Kategorie hinzufügen",
+    "new_category": "Neuer Kategoriename",
+    "category_details": "Kategoriedetails",
+    "manage_items": "Verwalten Sie Ihre Artikel",
+    "cate_prod_name": "Produktname der Kategorie",
+    "add": "Hinzufügen",
+    "cancel": "Stornieren",
+    "items": "Artikel",
+
+    "placeholder": {
+      "name": "Geben Sie den Kategorienamen ein",
+      "category": "Produkt eingeben (durch Komma getrennt)"
+    }
+  },
+  
+  "expense": {
+    "expense": "Ausgabe",
+    "exp_monthly_report": "Monatlicher Ausgabenbericht",
+    "exp_monthly_category": "Monatliche Ausgaben nach Kategorie",
+    "exp_overview": "Übersicht und Details der kategorisierten Ausgaben für den ausgewählten Monat.",
+    "report_for": "Bericht für",
+    "total_month_exp": "Monatliche Gesamtausgaben",
+    "prev_month": "Vs. Vormonat",
+    "dec_for_last_month": "Rückgang gegenüber dem Vormonat",
+    "exp_category": "Ausgabenkategorie",
+    "category": "Kategorie",
+    "exp_analize": "Ausgabenanalyse in 6 Kategorien",
+    "highest_category": "Höchste Kategorie",
+    "single_exp": "Größte Einzelausgabe",
+    "avg_exp": "Durchschnittliche Tagesausgaben",
+    "exp_details": "Detaillierte Ausgaben",
+    "breakdown_report": "Aufschlüsselung aller erfassten Ausgaben für den ausgewählten Monat.",
+     "date": "Datum",
+    "product": "Produkt",
+    "Category": "Kategorie",
+    "amount": "Menge",
+    "ref": "Referenz"
+
+   
+  },
+  "months": {
+  "January": "Januar",
+  "February": "Februar",
+  "March": "Marsch",
+  "April": "April",
+  "May": "Mai",
+  "June": "Juni",
+  "July": "Juli",
+  "August": "August",
+  "September": "September",
+  "October": "Oktober",
+  "November": "November",
+  "December": "Dezember"
+},
+"auth": {
+    "signin": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirm_password": "Passwort bestätigen",
+    "donot_have_account": "Sie haben noch kein Konto?",
+    "do_you_have_account": "Besitzen Sie bereits ein Konto?",
+    "signup": "Registrieren",
+    "or": "Oder",
+
+    "placeholder": {
+      "email": "Geben Sie Ihre E-Mail-Adresse ein",
+      "password": "Geben Sie Ihr Passwort ein",
+      "confirm_password": "Bestätigen Sie Ihr Passwort",
+      "name": "Geben Sie Ihren vollständigen Namen ein"
+      
+    }
+  }
+
+}
