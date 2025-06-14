@@ -5,21 +5,29 @@ import { Eye, EyeOff } from "lucide-react";
 import { FaUserEdit } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa6";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom"; // FIXED import
 import { useTranslation } from "react-i18next";
+import { signIn } from "../../api/auth";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  
+  const [error, setError] = useState("");
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const {t} = useTranslation();
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle sign-in logic here
-    console.log({ email, password });
+    setError("");
+    try {
+      const response = await signIn(email, password);
+      // localStorage.setItem('token', response.data.access); // Save token if needed
+      navigate("/dashboard"); // Redirect to dashboard
+    } catch (err) {
+      setError("Invalid email or password");
+      // Optionally log error: console.error(err.response?.data || err.message);
+    }
   };
 
   return (
@@ -59,8 +67,7 @@ const SignIn = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     className=" outline-none flex-1 text-gray-800"
-                    placeholder= {t('auth.placeholder.email')
-                    }
+                    placeholder={t('auth.placeholder.email')}
                   />
                   <FaUserEdit className="w-5.5 h-5.5 text-textClr ml-2" />
                 </div>
@@ -92,8 +99,10 @@ const SignIn = () => {
                   </button>
                 </div>
               </div>
-             
-
+              {/* error message */}
+              {error && (
+                <div className="text-red-500 text-sm mb-2">{error}</div>
+              )}
               {/* submit button  */}
               <button
                 type="submit"
@@ -102,7 +111,6 @@ const SignIn = () => {
                 {t('auth.signin')}
               </button>
             </form>
-          
           </div>
         </div>
         {/* right content  */}
