@@ -1,6 +1,7 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import baseApi from "../../api/baseApi";
+import { ENDPOINTS } from "../../api/endpoints";
 import {
   BarChart,
   Bar,
@@ -34,21 +35,6 @@ const dataCards = [
     positive: true,
     bgColor: "bg-indigo-100",
   },
-];
-
-const chartData = [
-  { month: "Jan", Expenditure: 4000, Profit: 2400 },
-  { month: "Feb", Expenditure: 3000, Profit: 1398 },
-  { month: "Mar", Expenditure: 2000, Profit: 9800 },
-  { month: "Apr", Expenditure: 2780, Profit: 3908 },
-  { month: "May", Expenditure: 1890, Profit: 4800 },
-  { month: "Jun", Expenditure: 2390, Profit: 3800 },
-  { month: "Jul", Expenditure: 3490, Profit: 4300 },
-  { month: "Aug", Expenditure: 3000, Profit: 3000 },
-  { month: "Sep", Expenditure: 2000, Profit: 3500 },
-  { month: "Oct", Expenditure: 2780, Profit: 4000 },
-  { month: "Nov", Expenditure: 1890, Profit: 3200 },
-  { month: "Dec", Expenditure: 2390, Profit: 4300 },
 ];
 
 const recentOrders = [
@@ -131,14 +117,44 @@ const activities = [
 
 const Dashboard = () => {
   const { t, i18n } = useTranslation();
+  const [chartData, setChartData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [apiError, setApiError] = useState("");
 
+  // Fetch statistics on mount
+useEffect(() => {
+  const fetchStatistics = async () => {
+    try {
+      const response = await fetch('http://10.0.70.145:8001/report/reports/statistics/');
+      if (response.ok) {
+        const data = await response.json();
 
+        // Transform data to match chart keys (capital "E" for Expenditure)
+        const transformedData = data.map(({ month, expenditure }) => ({
+          month,
+          Expenditure: expenditure,
+        }));
+
+        setChartData(transformedData);
+        setLoading(false);
+      } else {
+        setApiError('Error fetching statistics: ' + response.statusText);
+        setLoading(false);
+      }
+    } catch (error) {
+      setApiError('Fetch error: ' + error.message);
+      setLoading(false);
+    }
+  };
+
+  fetchStatistics();
+}, []);
 
   // Function to change the language
-  const changeLanguage = (lang)=>{
+  const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
-     
-  }
+  };
+
   // Translate dataCard labels by mapping original label to snake_case keys
   const localizedDataCards = dataCards.map((card) => ({
     ...card,
@@ -157,9 +173,7 @@ const Dashboard = () => {
           </label>
           <select
             className="w-full p-2 rounded-md border border-gray-300 text-sm cursor-pointer bg-white shadow-md"
-            // defaultValue={i18n.language}
             value={i18n.language}
-            // onChange={changeLanguage}
             onChange={(e) => changeLanguage(e.target.value)}
           >
             <option value="en">{t("common.english")}</option>
@@ -199,23 +213,28 @@ const Dashboard = () => {
           </section>
 
           {/* statics section  */}
+<section className="bg-white p-5 rounded-xl shadow-md mb-10 ">
+  <h3 className="font-semibold text-xl font-Roboto leading-[22px] text-textClr mb-8">
+    {t("dashboard.statistic")}
+  </h3>
+  {loading ? (
+    <div>Loading statistics...</div>  
+  ) : apiError ? (
+    <div className="text-red-500">{apiError}</div>
+  ) : (
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={chartData}>
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Legend iconType="circle" />
+        <Bar dataKey="Expenditure" fill="#6366F1" />
+      </BarChart>
+    </ResponsiveContainer>
+  )}
+</section>
 
-          <section className="bg-white p-5 rounded-xl shadow-md mb-10 ">
-            <h3 className="font-semibold text-xl font-Roboto leading-[22px] text-textClr mb-8">
-              {t("dashboard.statistic")}
-            </h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={chartData}>
-                <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
-                <Legend iconType="circle" />
-                <Bar dataKey="Expenditure" fill="#6366F1" />
-              </BarChart>
-            </ResponsiveContainer>
-          </section>
-
-         {/* recent order section  */}
+          {/* recent order section  */}
           <div className="bg-white rounded-xl shadow-md p-5 w-full mb-10">
             <h3 className="font-semibold text-xl font-Roboto leading-[22px] text-textClr mb-4.5">
               {t("dashboard.recent_orders")}
@@ -246,7 +265,7 @@ const Dashboard = () => {
                     <td className="px-1 md:px-4 py-1 md:py-3">{date}</td>
                     <td className="px-1 md:px-4 py-1 md:py-3">{product}</td>
                     <td className="px-1 md:px-4 py-1 md:py-3 text-gray-400">{category}</td>
-                    <td className="px-1 md:px-4 py-1 md:py-3">{amount}</td>  
+                    <td className="px-1 md:px-4 py-1 md:py-3">{amount}</td>
                   </tr>
                 ))}
               </tbody>
@@ -271,7 +290,6 @@ const Dashboard = () => {
               <div>
                 <p className="font-bold text-gray-800 text-base">{name}</p>
                 <p className="text-gray-500 text-sm">
-                  
                   {t(text.toLowerCase().replace(/\s/g, "_"))}
                 </p>
               </div>
@@ -284,4 +302,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
