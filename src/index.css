@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 480px;
+  --color-Yellow: #FFD673;
+  --color-textClr: #000000;
+  --color-textClr2: #333333;
+  --color-textClr3: #404040;
+  --color-Blue: #317FE4;
+  --font-Roboto-Serif: "Roboto Serif", serif;
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Inter: "Inter", sans-serif;
+  --font-koh-Santepheap: "Koh Santepheap", sans-serif;
+}
+
